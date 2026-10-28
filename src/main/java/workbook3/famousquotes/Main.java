@@ -1,5 +1,6 @@
 package workbook3.famousquotes;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -15,21 +16,23 @@ public class Main {
                 "Don't be afraid to give up the good to go for the great. - John D. Rockefeller",
         };
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner read = new Scanner(System.in);
         String again = "yes";
         while (again.equalsIgnoreCase("yes")) {
-        try {
-            //My 8 quotes
-
-            System.out.println("Enter number from |1 - 8|");
+            try {
+                System.out.println("Enter number from 0 - 7");
+                String answer = read.nextLine();
+                int number = Integer.parseInt(answer);
+                System.out.println(quotes[number]);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Pick a number in the right range.");
+            }
+            System.out.println("Want another quote? yes/no");
             String answer = read.nextLine();
 
-            String answer2 = read.nextLine();
-
-            if (answer.equalsIgnoreCase("yes")) ;
-            {
-                System.out.println(quotes[0]);
-            }
         }
-    }
-}
+            }
+            }
+
+
+
